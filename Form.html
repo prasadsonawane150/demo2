@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swapnil Joshi and Associates</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles to ensure background colors are deep */
+    body {
+      background-color:white; /* Deep Blue */
+    }
+    .form-container {
+      background-color: #f8370ce8; /* Deep Orange */
+      z-index: 10; /* Ensure the form container appears above the body background */
+    }
+    .company-info{
+      background-color: #1e1b4b;
+    }
+    .logo-background {
+      background-color: white;
+    }
+    .socialmedia-icons{
+      margin-top: 16rem;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen relative"> <!-- Add relative positioning to the body -->
+
+  <div class="form-container p-8 rounded-lg shadow-2xl w-full max-w-lg">
+    <!-- Company Logo -->
+    <div class="flex justify-center mb-6 rounded-md logo-background">
+      <img src="assets/Swapnil Joshi & Associates Logo.png" alt="Company Logo" class="h-32 w-full p-1">
+    </div>
+    
+    <!-- Form -->
+    <form class="space-y-6" action="https://sheetdb.io/api/v1/krwho6sscr35z" id="contactForm">
+      <!-- Name Fields -->
+      <div class="flex flex-wrap -mx-2">
+        <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
+          <label class="block text-sm font-medium text-white">First Name</label>
+          <input type="text" name="first_name" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-white focus:border-white" id="first_name"required>
+        </div>
+       
+        <div class="w-full sm:w-1/2 px-2">
+          <label class="block text-sm font-medium text-white">Last Name</label>
+          <input type="text" name="last_name"id="last_name" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-white focus:border-white" required>
+        </div>
+      </div>
+      
+      <!-- Contact Number -->
+      <div>
+        <label class="block text-sm font-medium text-white">Contact Number</label>
+        <input type="tel" name="contact_number" id="contact_number" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-white focus:border-white" required>
+      </div>
+      
+      <!-- Product Details Dropdown -->
+      <div>
+        <label class="block text-sm font-medium text-white">Product Details</label>
+        <select name="product_details" id="product_details" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-white focus:border-white" required>
+          <option value="" disabled selected>Select a product</option>
+          <option value="health_insurance"id="health_insurance">Health Insurance</option>
+          <option value="home_insurance" id="home_insurance">Home Insurance</option>
+          <option value="life_insurance" id="life_insurance">Life Insurance</option>
+          <option value="mortgage_insurance" id="mortgage_insurance">Mortgage Insurance</option>
+          <option value="property_insurance" id="property_insurance">Property Insurance</option>
+          <option value="travel_insurance" id="travel_insurance">Travel Insurance</option>
+          <option value="workers_compensation_insurance" id="workers_compensation_insurance">Worker's Compensation Insurance</option>
+        </select>
+      </div>
+      
+      <!-- Email ID -->
+      <div>
+        <label class="block text-sm font-medium text-white">Email ID</label>
+        <input type="email" name="email_id" id="email_id" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-white focus:border-white" required>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-center">
+        <button type="submit" class="px-6 py-3 bg-indigo-700 text-white font-semibold rounded-md hover:bg-indigo-400 hover:text-2xl focus:outline-none focus:ring-2 focus:ring-white">
+          Submit
+        </button>
+      </div>
+    </form>
+
+    <!-- Company Information -->
+    <div class="mt-8 company-info bg-gradient-to-l p-10 shadow-inner max-w-full rounded-md relative">
+      <h2 class="text-xl font-bold text-white mb-2">About Swapnil Joshi Associates</h2>
+      <p class="text-white mb-4">Swapnil Joshi and Associates offers a comprehensive suite of financial security solutions for individuals and businesses. We can help you find affordable health insurance, protect your family's future with life and savings plans, and safeguard your business with risk management expertise. Our services include cashless health insurance, critical illness protection, travel insurance, motor insurance, group health plans, workmen compensation, marine cargo coverage, property insurance, term life insurance, pension plans, and child education savings programs. Let us help you plan for a brighter tomorrow!</p>
+      <ul class="list-disc list-inside text-white">
+        <li>Comprehensive Financial Security Solutions</li>
+        <li>Health and Life Insurance Plans</li>
+        <li>Business Risk Management Services</li>
+        <li>Specialized Insurance and Savings Programs</li>
+      </ul>
+      <br>
+      <hr>
+      <!-- Social Media Icons -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 socialmedia-icons">
+        <a href="#"><i class="fab fa-facebook text-white mr-2"></i></a>
+        <a href="#"><i class="fab fa-whatsapp text-white mr-2"></i></a>
+        <a href="#"><i class="fab fa-instagram text-white mr-2"></i></a>
+        <a href="#"><i class="fab fa-linkedin text-white"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+  <!-- Add JavaScript to handle form submission and send data as JSON -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Create an object from the form data
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      // Send the data as JSON
+      fetch('https://sheetdb.io/api/v1/t1i8v34ris3to', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data: [data] })
+      })
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        alert('Form submitted successfully!');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while submitting the form.');
+      });
+    });
+  </script>
+</body>
+</html>
